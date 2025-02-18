@@ -78,7 +78,8 @@ void				ss(t_var *swapp);
 
 int					find_index(t_stack *a, int x, int p);
 
-void				implementation(t_var *var, int max_number, int *stok_maxxx);
+void				implementation(t_var *var, int max_number, int *stok_maxxx,
+						int i);
 void				contuni_implementation(t_var *var);
 void				contuni_conerty_data_integer(int number, int *maxxx,
 						char **split, char *data);

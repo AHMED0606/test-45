@@ -1,4 +1,4 @@
-NAME = push_swap
+NAME = push_swapA
 BONUS = checker
 
 CC = cc
@@ -39,9 +39,6 @@ bonus: $(BONUS_OBJ)
 
 $(NAME): $(PUSH_OBJ)
 	$(CC) $(CFLAGS) $(PUSH_OBJ) -o $(NAME)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(PUSH_OBJ) $(BONUS_OBJ)

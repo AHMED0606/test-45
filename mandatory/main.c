@@ -12,25 +12,25 @@
 
 #include "head.h"
 
-int     *get_max(int max_number)
+int	*get_max(int max_number)
 {
-    int *max;
-
-    max = malloc(max_number * sizeof(int));
-    if (!max)
-        return (NULL);
-    return (max);    
-}
-
-void	implementation(t_var *var, int max_number, int *stok_maxxx)
-{
-	int	i;
 	int	*max;
 
-	i = 0;
-    max = get_max(max_number);
-    if(!max)
-        exit(1);
+	max = malloc(max_number * sizeof(int));
+	if (!max)
+		return (NULL);
+	return (max);
+}
+
+void	implementation(t_var *var, int max_number, int *stok_maxxx, int i)
+{
+	int	*max;
+
+	max = get_max(max_number);
+	if (!max)
+	{
+		exit(1);
+	}
 	while (i < max_number)
 	{
 		add_to_stak(&var->head_stack_a, stok_maxxx[i]);
@@ -47,7 +47,7 @@ void	implementation(t_var *var, int max_number, int *stok_maxxx)
 		algo_quatre_nombre(var);
 	if (size_list(var->head_stack_a) == 5)
 		algo_cinquieme_nombre(var);
-    free(max);
+	free(max);
 	contuni_implementation(var);
 }
 
@@ -72,7 +72,9 @@ int	main(int ac, char **av)
 	char	*data;
 	int		max_number;
 	int		*stok_maxxx;
+	int		i;
 
+	i = 0;
 	var.head_stack_a = NULL;
 	var.head_stack_b = NULL;
 	if (ac == 1)
@@ -85,7 +87,7 @@ int	main(int ac, char **av)
 			max_number) == 1)
 		return (free(stok_maxxx), free(data), 0);
 	else
-		implementation(&var, max_number, stok_maxxx);
+		implementation(&var, max_number, stok_maxxx, i);
 	free_list(var.head_stack_a);
 	free(data);
 	free(stok_maxxx);

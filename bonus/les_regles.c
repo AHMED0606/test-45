@@ -74,24 +74,12 @@ void	ra_and_rb(t_stack **head, char flag)
 
 void	rr_ra_rb_meme_temp(t_var *head)
 {
-	if (head->head_stack_a == NULL || head->head_stack_b == NULL)
-		return ;
-	else
-	{
-		ra_and_rb(&head->head_stack_a, 's');
-		ra_and_rb(&head->head_stack_b, 's');
-		write(1, "rr\n", 3);
-	}
+	ra_and_rb(&head->head_stack_a, 's');
+	ra_and_rb(&head->head_stack_b, 's');
 }
 
 void	rrr_rra_rrb_meme_temp(t_var *head)
 {
-	if (head->head_stack_a == NULL || head->head_stack_b == NULL)
-		return ;
-	else
-	{
-		rra_rrb(&head->head_stack_a, 's');
-		rra_rrb(&head->head_stack_b, 's');
-		write(1, "rrr\n", 4);
-	}
+	rra_rrb(&head->head_stack_a, 's');
+	rra_rrb(&head->head_stack_b, 's');
 }

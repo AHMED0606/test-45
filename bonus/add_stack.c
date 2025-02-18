@@ -55,14 +55,8 @@ void	swap(t_stack **heed, char flag)
 
 void	ss(t_var *swapp)
 {
-	if (swapp->head_stack_a == NULL || swapp->head_stack_b == NULL)
-		return ;
-	else
-	{
-		swap(&swapp->head_stack_a, 's');
-		swap(&swapp->head_stack_b, 's');
-		write(1, "ss\n", 3);
-	}
+	swap(&swapp->head_stack_a, 's');
+	swap(&swapp->head_stack_b, 's');
 }
 
 int	size_list(t_stack *heed)
